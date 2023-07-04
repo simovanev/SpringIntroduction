@@ -2,10 +2,7 @@ package com.example.bookshopsystem.domain.entities;
 
 import com.example.bookshopsystem.domain.enums.AgeRestriction;
 import com.example.bookshopsystem.domain.enums.Type;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -17,6 +14,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

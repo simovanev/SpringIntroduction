@@ -1,9 +1,6 @@
 package com.example.bookshopsystem.domain.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -14,6 +11,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 
 public class Author {
     @Id
@@ -26,4 +24,7 @@ public class Author {
     @OneToMany(targetEntity = Book.class,mappedBy = "author",fetch = FetchType.EAGER)
     private Set<Book> books;
 
+    public String getAuthorFullName() {
+        return firstName +" "+lastName;
+    }
 }
